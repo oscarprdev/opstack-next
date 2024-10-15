@@ -16,7 +16,10 @@ export class LoginUsecase extends UseCase implements ILoginUsecase {
 	readonly errorMessage = 'Error logging in';
 	readonly invalidCredentialsErrorMessage = 'Invalid credentials';
 
-	constructor(private readonly ports: LoginPort) {
+	constructor(
+		private readonly ports: LoginPort,
+		private readonly crypt: typeof bcrypt
+	) {
 		super();
 	}
 
@@ -27,7 +30,7 @@ export class LoginUsecase extends UseCase implements ILoginUsecase {
 			const user = await this.ports.getUserByUsername(username);
 			if (!user) throw new Error(this.invalidCredentialsErrorMessage);
 
-			const passwordMatch = await bcrypt.compare(password, user.password);
+			const passwordMatch = await this.crypt.compare(password, user.password);
 			if (!passwordMatch) throw new Error(this.invalidCredentialsErrorMessage);
 
 			return this.successResponse({
