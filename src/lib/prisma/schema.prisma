@@ -1,0 +1,37 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  engineType = "library"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+}
+  // directUrl = env("DIRECT_URL")
+
+model User {
+  id          String    @id @default(uuid()) @unique
+  username    String    @unique
+  password    String
+  email       String    @unique
+  description String    @default("User description")
+  role        Role      @default(DEFAULT)
+
+  examples    Example[] 
+}
+
+model Example {
+  id          String    @id @default(uuid()) @unique
+  title       String    @unique
+  description String
+
+  userId      String    
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+  
+enum Role {
+  ADMIN
+  USER
+  DEFAULT 
+}
