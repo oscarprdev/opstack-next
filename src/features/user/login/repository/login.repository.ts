@@ -1,6 +1,6 @@
 import { UserModel } from '~/features/shared/models/user.model';
-import { LoginInfra } from '~/features/user/login/infra/login.infra';
 import { LoginPort } from '~/features/user/login/application/login.port';
+import { LoginInfra } from '~/features/user/login/infra/login.infra';
 
 export class LoginRepository implements LoginPort {
 	constructor(private readonly infra: LoginInfra) {}

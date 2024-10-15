@@ -1,7 +1,7 @@
-import { UserClient } from '~/lib/prisma/clients/user/user.client';
+import { RegisterUsecase } from './application/register.usecase';
 import { RegisterInfra } from './infra/register.infra';
 import { RegisterRepository } from './repository/register.repository';
-import { RegisterUsecase } from './application/register.usecase';
+import { UserClient } from '~/lib/prisma/clients/user/user.client';
 
 export const provideRegisterUsecase = () => {
 	const registerInfra = new RegisterInfra(new UserClient());

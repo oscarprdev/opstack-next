@@ -1,7 +1,7 @@
+import { provideLoginUsecase } from './features/user/login';
+import { isError } from './lib/utils/either';
 import { NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
-import { isError } from './lib/utils/either';
-import { provideLoginUsecase } from './features/user/login';
 
 export default {
 	providers: [

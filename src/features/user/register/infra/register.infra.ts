@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
-import { UserClient } from '~/lib/prisma/clients/user/user.client';
 import { CreateUserPayload } from '~/features/user/register/shared/types';
+import { UserClient } from '~/lib/prisma/clients/user/user.client';
 
 export interface IRegisterInfra {
 	getUserByCredentials(username: string, password: string): Promise<User | null>;

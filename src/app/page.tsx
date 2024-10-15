@@ -1,4 +1,3 @@
 export default function Home() {
-	return 
-	<main>OPSTACK - NEXT</main>;
+	return <main>OPSTACK - NEXT</main>;
 }

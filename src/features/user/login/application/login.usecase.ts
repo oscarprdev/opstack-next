@@ -1,10 +1,9 @@
 import bcrypt from 'bcryptjs';
-
-import { Either } from '~/lib/utils/either';
-import { LoginDto, loginDto } from '~/features/user/login/application/login.dto';
-import { LoginPort } from '~/features/user/login/application/login.port';
 import { UseCase } from '~/features/shared/application/usecase';
 import { UserModel } from '~/features/shared/models/user.model';
+import { LoginDto, loginDto } from '~/features/user/login/application/login.dto';
+import { LoginPort } from '~/features/user/login/application/login.port';
+import { Either } from '~/lib/utils/either';
 
 type Output = Either<string, { data: Omit<UserModel, 'password'>; message: string }>;
 

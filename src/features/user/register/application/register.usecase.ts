@@ -1,10 +1,9 @@
-import bcrypt from 'bcryptjs';
 import { $Enums } from '@prisma/client';
-
-import { Either } from '~/lib/utils/either';
+import bcrypt from 'bcryptjs';
 import { UseCase } from '~/features/shared/application/usecase';
-import { registerDto, RegisterDto } from '~/features/user/register/application/register.dto';
+import { RegisterDto, registerDto } from '~/features/user/register/application/register.dto';
 import { RegisterPort } from '~/features/user/register/application/register.port';
+import { Either } from '~/lib/utils/either';
 
 type Output = Either<string, string>;
 

@@ -1,6 +1,6 @@
-import NextAuth, { NextAuthResult } from 'next-auth';
 import authConfig from './auth.config';
 import { $Enums } from '@prisma/client';
+import NextAuth, { NextAuthResult } from 'next-auth';
 
 const nextAuth = NextAuth({
 	callbacks: {

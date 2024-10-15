@@ -1,5 +1,9 @@
-import { Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export class BasePage {
-    constructor(private readonly page: Page) {}
+	readonly main: Locator;
+
+	constructor(private readonly page: Page) {
+		this.main = this.page.getByText('OPSTACK - NEXT');
+	}
 }

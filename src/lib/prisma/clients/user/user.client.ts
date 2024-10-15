@@ -1,6 +1,6 @@
-import { CreateUserPayload } from '~/features/user/register/shared/types';
 import prisma from '../../db';
 import { User } from '@prisma/client';
+import { CreateUserPayload } from '~/features/user/register/shared/types';
 
 interface IUserClient {
 	getUserByUsername(id: string): Promise<User | null>;
