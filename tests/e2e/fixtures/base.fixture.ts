@@ -12,7 +12,7 @@ export const test = base.extend<BaseFixture>({
 	},
 	navigateToApp: async ({ page }, use) => {
 		await use(async (): Promise<void> => {
-			await page.goto(`http://localhost:3000/`);
+			await page.goto(`/`);
 		});
 	},
 });
